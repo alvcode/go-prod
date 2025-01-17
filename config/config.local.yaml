@@ -1,0 +1,27 @@
+app_config:
+  is_debug: true
+  log_level: trace
+  admin_user:
+    email: "alvcode@example.ru"
+    password: "123"
+
+http:
+  ip: 0.0.0.0
+  port: 30000
+  read_timeout: 15s
+  write_timeout: 15s
+  cors:
+    allowed_methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    allowed_origins: ["*"]
+    allowed_headers: ["*"]
+    allow_credentials: true
+    options_passthrough: true
+    exposed_headers: ["*"]
+    debug: false
+
+postgresql:
+  host: localhost
+  port: 5477
+  username: postgres
+  password: postgres
+  database: go-prod

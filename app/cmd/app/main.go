@@ -14,10 +14,10 @@ func main() {
 	logger := logging.NewLogger()
 	ctx = logging.ContextWithLogger(ctx, logger)
 
-	logger.Infoln("Starting application")
-	cfg := config.GetConfig()
+	logging.GetLogger(ctx).Infoln("Starting application")
 
-	logger.Println("Loading config")
+	cfg := config.GetConfig()
+	logging.GetLogger(ctx).Println("Loading config")
 
 	a, err := app.NewApp(ctx, cfg)
 	if err != nil {
